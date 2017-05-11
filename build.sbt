@@ -23,7 +23,10 @@ val dependecies = Seq("com.typesafe.akka" %% "akka-actor" % "2.5.1",
   "com.typesafe.akka" %% "akka-stream-testkit" % "2.5.1",
   "com.typesafe.akka" %% "akka-testkit" % "2.5.1",
   "com.typesafe.akka" %% "akka-typed" % "2.5.1",
-  "com.typesafe.akka" %% "akka-contrib" % "2.5.1")
+  "com.typesafe.akka" %% "akka-contrib" % "2.5.1",
+
+  "org.iq80.leveldb"            % "leveldb"          % "0.7",
+  "org.fusesource.leveldbjni"   % "leveldbjni-all"   % "1.8")
 
 libraryDependencies ++= dependecies
         
