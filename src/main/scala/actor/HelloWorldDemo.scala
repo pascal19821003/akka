@@ -49,11 +49,13 @@ object AkkaAskDemo extends App {
 
 object ActorPathDemo extends App {
   val system = ActorSystem()
-  val a = system.actorOf(Props[HelloActor])
+  val a = system.actorOf(Props[HelloActor], "hello")
   system.actorOf(Props(classOf[Terminator], a))
 
+  val path = "akka://default/user/hello"
+
   implicit val timeout = Timeout(5 seconds)
-  val f = (system.actorSelection(a.path) ? Identify(None))
+  val f = (system.actorSelection(path) ? Identify(None))
 
   f.onSuccess {
     case ActorIdentity(_, Some(ref)) =>
